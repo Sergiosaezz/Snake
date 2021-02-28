@@ -41,11 +41,12 @@ public class Controller {
     private SpriteBatch spriteBatch;
     private Sound movementSound;
 
-    public enum gameStates{
+    public enum gameStates {
         GAME_START,
         PLAYING,
         GAME_END
     }
+
     private gameStates controllerVG;
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -58,12 +59,11 @@ public class Controller {
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     /**
-     *
-     * @param cellWidth         Width of the cells where Snake would move
+     * @param cellWidth        Width of the cells where Snake would move
      * @param newXOffset
      * @param newYOffset
-     * @param newDisplayWidth   Width of the display
-     * @param newDisplayHeight  Height of the display
+     * @param newDisplayWidth  Width of the display
+     * @param newDisplayHeight Height of the display
      */
     private Controller(float cellWidth, float newXOffset, float newYOffset, float newDisplayWidth, float newDisplayHeight, SpriteBatch spriteBatch) {
         System.out.println("Debug Information -------------------");
@@ -82,12 +82,11 @@ public class Controller {
     }
 
     /**
-     *
-     * @param cellWidth         Width of the cells where Snake would move
+     * @param cellWidth        Width of the cells where Snake would move
      * @param newXOffset
      * @param newYOffset
-     * @param newDisplayWidth   Height of the display
-     * @param newDisplayHeight  Width of the display
+     * @param newDisplayWidth  Height of the display
+     * @param newDisplayHeight Width of the display
      * @return A controller if the there is not other controller
      */
     public static Controller create(float cellWidth, float newXOffset, float newYOffset, float newDisplayWidth, float newDisplayHeight, SpriteBatch spriteBatch) {
@@ -98,10 +97,11 @@ public class Controller {
 
     /**
      * Method to manage the objects associated to the controller
+     *
      * @param spriteBatch Platform to draw textures
      */
     public void loop() {
-        switch (controllerVG){
+        switch (controllerVG) {
             case GAME_START:
                 this.startScreen();
                 break;
@@ -113,7 +113,7 @@ public class Controller {
         }
     }
 
-    private void startScreen(){
+    private void startScreen() {
         this.spriteBatch.begin();
         this.spriteBatch.draw(Controller.START_BACKGROUND, this.X_OFFSET, this.Y_OFFSET, this.DISPLAY_WIDTH, this.DISPLAY_HEIGHT);
         this.spriteBatch.end();
@@ -123,7 +123,7 @@ public class Controller {
             this.controllerVG = gameStates.PLAYING;
     }
 
-    private void gameStarted(){
+    private void gameStarted() {
         this.renderPlaying();
         this.touchHandler();
         this.snakeHandler();
@@ -131,6 +131,7 @@ public class Controller {
 
     /**
      * Method to draw the sprite texture and the background
+     *
      * @param spriteBatch Platform to draw textures
      */
     private void renderPlaying() {
@@ -170,7 +171,7 @@ public class Controller {
         }
     }
 
-    private void gameFinished(){
+    private void gameFinished() {
         this.spriteBatch.begin();
         this.spriteBatch.draw(Controller.END_BACKGROUND, this.X_OFFSET, this.Y_OFFSET, this.DISPLAY_WIDTH, this.DISPLAY_HEIGHT);
         this.spriteBatch.end();

@@ -49,12 +49,12 @@ public class MyGdxGame extends ApplicationAdapter {
                 batch);
     }
 
-    private void calculateDisplayCharacteristics(){
+    private void calculateDisplayCharacteristics() {
         this.finalDisplaySize = this.getRoundedUsableDisplaySize();
         this.calculateOffsets();
     }
 
-    private int getRoundedUsableDisplaySize(){
+    private int getRoundedUsableDisplaySize() {
         int lessDisplaySize = this.getSmallerDisplaySize();
         int usableDisplaySize = this.getUsableDisplaySize(lessDisplaySize);
         return this.roundUsableDisplaySize(usableDisplaySize);
@@ -66,19 +66,19 @@ public class MyGdxGame extends ApplicationAdapter {
         return (int) Math.min(this.screenWidth, this.screenHeight);
     }
 
-    private int getUsableDisplaySize(int displaySize){
+    private int getUsableDisplaySize(int displaySize) {
         return (int) (displaySize * MyGdxGame.USABLE_PERCENT);
     }
 
-    private int roundUsableDisplaySize(int displaySize){
-        return (int) (MyGdxGame.PIECES_PER_AXIS*(Math.floor(displaySize/MyGdxGame.PIECES_PER_AXIS)));
+    private int roundUsableDisplaySize(int displaySize) {
+        return (int) (MyGdxGame.PIECES_PER_AXIS * (Math.floor(displaySize / MyGdxGame.PIECES_PER_AXIS)));
     }
 
-    private void calculateOffsets(){
+    private void calculateOffsets() {
         this.calculateMainOffsets();
     }
 
-    private void calculateMainOffsets(){
+    private void calculateMainOffsets() {
         this.finalLeftOffsetX = (this.screenWidth - this.finalDisplaySize) / 2;
         this.finalDownOffsetY = (this.screenHeight - this.finalDisplaySize) / 2;
     }

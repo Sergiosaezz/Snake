@@ -8,7 +8,7 @@ public enum Directions {
 
     public final int value;
 
-    Directions(int value){
+    Directions(int value) {
         this.value = value;
     }
 }

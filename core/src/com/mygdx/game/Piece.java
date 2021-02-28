@@ -33,6 +33,7 @@ public class Piece {
 
     /**
      * Builder of piece
+     *
      * @param width          width of piece
      * @param newRelativeRow Y relative position that piece it's going to have
      * @param newRelativeCol X relative position that piece it's going to have
@@ -48,6 +49,7 @@ public class Piece {
 
     /**
      * Method to draw the sprite texture
+     *
      * @param spriteBatch Platform to draw textures
      */
     public void render(SpriteBatch spriteBatch) {
@@ -65,6 +67,7 @@ public class Piece {
 
     /**
      * Method getter for the atribute position X
+     *
      * @return Acual position from the piece
      */
     public float getAbsoluteCol() {
@@ -73,6 +76,7 @@ public class Piece {
 
     /**
      * Method getter for the atribute position Y
+     *
      * @return Acual position Y from the piece
      */
     public float getAbsoluteRow() {
@@ -83,28 +87,28 @@ public class Piece {
      * Rapid Method to increment X position
      */
     public void incrementCol() {
-        this.absoluteCol+=width;
+        this.absoluteCol += width;
     }
 
     /**
      * Rapid Method to decrement X position
      */
     public void decrementCol() {
-        this.absoluteCol-=width;
+        this.absoluteCol -= width;
     }
 
     /**
      * Rapid Method to increment Y position
      */
     public void incrementRow() {
-        this.absoluteRow+=width;
+        this.absoluteRow += width;
     }
 
     /**
      * Rapid Method to decrement Y position
      */
     public void decrementRow() {
-        this.absoluteRow-=width;
+        this.absoluteRow -= width;
     }
 
     /**
