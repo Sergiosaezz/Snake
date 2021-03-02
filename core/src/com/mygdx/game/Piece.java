@@ -15,11 +15,12 @@ public class Piece {
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    private float width;
-    private float absoluteCol;
-    private float absoluteRow;
+    private final int width;
+    private final String image;
+
+    private int absoluteCol;
+    private int absoluteRow;
     private Texture texture;
-    private String image;
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -33,13 +34,12 @@ public class Piece {
 
     /**
      * Builder of piece
-     *
      * @param width          width of piece
-     * @param newRelativeRow Y relative position that piece it's going to have
-     * @param newRelativeCol X relative position that piece it's going to have
+     * @param newAbsoluteRow New absolute position Y 
+     * @param newAbsoluteCol New absolute position X
      * @param newImage       route of the sprite to loading
      */
-    public Piece(float newAbsoluteCol, float newAbsoluteRow, float width, String newImage) {
+    public Piece(int newAbsoluteCol, int newAbsoluteRow, int width, String newImage) {
         this.absoluteCol = newAbsoluteCol;
         this.absoluteRow = newAbsoluteRow;
         this.width = width;
@@ -49,7 +49,6 @@ public class Piece {
 
     /**
      * Method to draw the sprite texture
-     *
      * @param spriteBatch Platform to draw textures
      */
     public void render(SpriteBatch spriteBatch) {
@@ -59,7 +58,7 @@ public class Piece {
     }
 
     /**
-     * Method to dispose texture from graffic buffer
+     * Method to dispose texture from graphic buffer
      */
     public void dispose() {
         if (this.texture != null) texture.dispose();
@@ -67,8 +66,7 @@ public class Piece {
 
     /**
      * Method getter for the atribute position X
-     *
-     * @return Acual position from the piece
+     * @return Current position from the piece
      */
     public float getAbsoluteCol() {
         return this.absoluteCol;
@@ -76,8 +74,7 @@ public class Piece {
 
     /**
      * Method getter for the atribute position Y
-     *
-     * @return Acual position Y from the piece
+     * @return Current position Y from the piece
      */
     public float getAbsoluteRow() {
         return this.absoluteRow;
@@ -87,28 +84,28 @@ public class Piece {
      * Rapid Method to increment X position
      */
     public void incrementCol() {
-        this.absoluteCol += width;
+        this.absoluteCol+=width;
     }
 
     /**
      * Rapid Method to decrement X position
      */
     public void decrementCol() {
-        this.absoluteCol -= width;
+        this.absoluteCol-=width;
     }
 
     /**
      * Rapid Method to increment Y position
      */
     public void incrementRow() {
-        this.absoluteRow += width;
+        this.absoluteRow+=width;
     }
 
     /**
      * Rapid Method to decrement Y position
      */
     public void decrementRow() {
-        this.absoluteRow -= width;
+        this.absoluteRow-=width;
     }
 
     /**
@@ -119,7 +116,7 @@ public class Piece {
     }
 
     /**
-     * Method that return a complete cloning of her self
+     * Method that return a complete cloning of herself
      *
      * @return a instance of the clone piece
      */
